@@ -94,7 +94,7 @@ class project_processing:
                 score = obj.confidence[j]
 
                 
-                if name == "train" and score >= 0.75:
+                if name == "train" and score >= 0.6:
 
                     # 切り抜いた領域を取得
                     cropped_img = image[int(ymin):int(ymax), int(xmin):int(xmax)]
@@ -114,6 +114,7 @@ class project_processing:
                     #アノテーションをしているよーん
                     
                     info = f"{number} 0.0 0.0 1.0 1.0"
+
                     text_filename = f"{train_type}_{str(count).zfill(4)}.txt"
                     text_save_path = os.path.join(output_folder_path, text_filename)
                     with open(text_save_path, "w") as f:
@@ -123,7 +124,7 @@ class project_processing:
                     count += 1     
         #classes.txtを作る
         info = """shinkansen
-        densya"""
+densya"""
 
         text_save_path = os.path.join(output_folder_path, "classes.txt")
         with open(text_save_path, "w") as f:
