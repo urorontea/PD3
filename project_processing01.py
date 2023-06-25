@@ -7,8 +7,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import glob
 import torch
+import shutil
 #from google.colab.patches import cv2_imshow
 from pytube import YouTube
+
+
+from TrainValTest_2 import devide_img
+from CombineTwoFolders import combine
+
 
 class project_processing:
 
@@ -47,7 +53,7 @@ class project_processing:
             ret, frame = cap.read()
             if ret:
                 cv2.imwrite(file_path, frame)
-                print(f"Saved random frame {random_frame_number} as {name_1}")
+                #print(f"Saved random frame {random_frame_number} as {name_1}")
             else:
                 print(f"Failed to read frame {random_frame_number}")
         print(f"saved at {dir_path}")
@@ -121,14 +127,27 @@ class project_processing:
                         #f.write(f"{cropped_img.shape[1]} {cropped_img.shape[0]}\n")  # 画像の幅と高さを書き込む
                         f.write(info)  # オブジェクトの情報を書き込む
 
-                    count += 1     
+                    count += 1 
+                        
         #classes.txtを作る
-        info = """shinkansen
-densya"""
+        info = """shinkansen\ndensya"""
 
         text_save_path = os.path.join(output_folder_path, "classes.txt")
         with open(text_save_path, "w") as f:
             f.write(info)
+
+        #保存した画像を消す（物体認識をする前の画像を消す）
+        # ディレクトリ内のファイルを取得
+        file_list = os.listdir(input_folder_path)
+
+        for file_name in file_list:
+            file_path = os.path.join(input_folder_path, file_name)
+
+            # ファイルが存在し、拡張子が.jpgの場合にのみ削除
+            if os.path.isfile(file_path) and file_name.endswith(".jpg"):
+                os.remove(file_path)
+                print(f"{file_name} を削除しました")
+ 
         
                         
 
@@ -145,3 +164,265 @@ densya"""
             return train_type, number
         
     
+    #二つのふぉるだを1つにしちゃうぞ
+    def combine(self, folder1_path, folder2_path, output_folder_path):
+        # 元のフォルダのパス
+        #folder1_path = "/home/nozaki/ML/ultralytics/pic/dataset0619_4/shin/cropped/"
+    # folder2_path = "/home/nozaki/ML/ultralytics/pic/dataset0619_4/den/cropped/"
+        # 新しいフォルダのパス
+    # output_folder_path = "/home/nozaki/ML/ultralytics/pic/dataset0619_4/aaaa"
+        
+        # 出力フォルダが存在しない場合は作成する
+        os.makedirs(output_folder_path, exist_ok=True)
+
+        # ファイル名のカウンタ
+        counter1 = 0  # densya_0000 のカウンタ
+        counter2 = 0  # shinkansen_0000 のカウンタ
+
+        # フォルダ1の画像とテキストファイルをコピー
+        for filename in os.listdir(folder1_path):
+            if filename.endswith(".jpg"):
+                if "densya" in filename:
+                    image_src = os.path.join(folder1_path, filename)
+                    image_dst = os.path.join(output_folder_path, f"densya_{counter1:04d}.jpg")
+                    shutil.copyfile(image_src, image_dst)
+
+                    txt_filename = filename.replace(".jpg", ".txt")
+                    txt_src = os.path.join(folder1_path, txt_filename)
+                    txt_dst = os.path.join(output_folder_path, f"densya_{counter1:04d}.txt")
+                    shutil.copyfile(txt_src, txt_dst)
+
+                    counter1 += 1
+                elif "shinkansen" in filename:
+                    image_src = os.path.join(folder1_path, filename)
+                    image_dst = os.path.join(output_folder_path, f"shinkansen_{counter2:04d}.jpg")
+                    shutil.copyfile(image_src, image_dst)
+
+                    txt_filename = filename.replace(".jpg", ".txt")
+                    txt_src = os.path.join(folder1_path, txt_filename)
+                    txt_dst = os.path.join(output_folder_path, f"shinkansen_{counter2:04d}.txt")
+                    shutil.copyfile(txt_src, txt_dst)
+
+                    counter2 += 1
+
+        # フォルダ2の画像とテキストファイルをコピー
+        for filename in os.listdir(folder2_path):
+            if filename.endswith(".jpg"):
+                if "densya" in filename:
+                    image_src = os.path.join(folder2_path, filename)
+                    image_dst = os.path.join(output_folder_path, f"densya_{counter1:04d}.jpg")
+                    shutil.copyfile(image_src, image_dst)
+
+                    txt_filename = filename.replace(".jpg", ".txt")
+                    txt_src = os.path.join(folder2_path, txt_filename)
+                    txt_dst = os.path.join(output_folder_path, f"densya_{counter1:04d}.txt")
+                    shutil.copyfile(txt_src, txt_dst)
+
+                    counter1 += 1
+                elif "shinkansen" in filename:
+                    image_src = os.path.join(folder2_path, filename)
+                    image_dst = os.path.join(output_folder_path, f"shinkansen_{counter2:04d}.jpg")
+                    shutil.copyfile(image_src, image_dst)
+
+                    txt_filename = filename.replace(".jpg", ".txt")
+                    txt_src = os.path.join(folder2_path, txt_filename)
+                    txt_dst = os.path.join(output_folder_path, f"shinkansen_{counter2:04d}.txt")
+                    shutil.copyfile(txt_src, txt_dst)
+
+                    counter2 += 1
+
+        print("conbined")
+
+    def combine01(self, folder1_path, output_folder_path, pic_sum):
+        counter = pic_sum
+        for filename in os.listdir(folder1_path):
+            if filename.endswith(".jpg"):
+                if "densya" in filename:
+                    image_src = os.path.join(folder1_path, filename)
+                    image_dst = os.path.join(output_folder_path, f"densya_{counter:04d}.jpg")
+                    shutil.copyfile(image_src, image_dst)
+
+                    txt_filename = filename.replace(".jpg", ".txt")
+                    txt_src = os.path.join(folder1_path, txt_filename)
+                    txt_dst = os.path.join(output_folder_path, f"densya_{counter:04d}.txt")
+                    shutil.copyfile(txt_src, txt_dst)
+
+                    counter += 1
+
+                elif "shinkansen" in filename:
+                    image_src = os.path.join(folder1_path, filename)
+                    image_dst = os.path.join(output_folder_path, f"shinkansen_{counter:04d}.jpg")
+                    shutil.copyfile(image_src, image_dst)
+
+                    txt_filename = filename.replace(".jpg", ".txt")
+                    txt_src = os.path.join(folder1_path, txt_filename)
+                    txt_dst = os.path.join(output_folder_path, f"shinkansen_{counter:04d}.txt")
+                    shutil.copyfile(txt_src, txt_dst)
+
+                    counter += 1
+        print("conbined")
+        
+    #train:val:test に分けちゃうお
+    def devide_img(self, data_folder):
+        # フォルダのパスと分割比率の設定
+        #data_folder = "/home/nozaki/ML/ultralytics/pic/dataset0619_4/aaaa/"
+        train_ratio = 0.7
+        val_ratio = 0.2
+        test_ratio = 0.1
+
+        # データセット内のファイルリストを取得
+        file_list = os.listdir(data_folder)
+        file_list.sort()
+        #print(file_list,'\n')
+
+        # フォルダの作成
+        train_folder = os.path.join(data_folder, "train")
+        val_folder = os.path.join(data_folder, "val")
+        test_folder = os.path.join(data_folder, "test")
+
+        os.makedirs(train_folder, exist_ok=True)
+        os.makedirs(val_folder, exist_ok=True)
+        os.makedirs(test_folder, exist_ok=True)
+
+        # データセットの分割
+        densyaIMG_files = [file for file in file_list if "densya" in file and "jpg" in file]
+        densyaIMG_files.sort()
+        densyaTXT_files = [file for file in file_list if "densya" in file and "txt" in file]
+        densyaTXT_files.sort()
+        shinkansenIMG_files = [file for file in file_list if "shinkansen" in file and "jpg" in file]
+        shinkansenIMG_files.sort()
+        shinkansenTXT_files = [file for file in file_list if "shinkansen" in file and "txt" in file]
+        shinkansenTXT_files.sort()
+
+        #random.shuffle(densya_files)
+        #random.shuffle(shinkansen_files)
+
+        num_densya = len(densyaIMG_files)
+        num_shinkansen = len(shinkansenIMG_files)
+
+        num_train_densya = int(num_densya * train_ratio)
+        num_val_densya = int(num_densya * val_ratio)
+        num_test_densya = num_densya - num_train_densya - num_val_densya
+
+        num_train_shinkansen = int(num_shinkansen * train_ratio)
+        num_val_shinkansen = int(num_shinkansen * val_ratio)
+        num_test_shinkansen = num_shinkansen - num_train_shinkansen - num_val_shinkansen
+
+        # 電車データの分割
+        for i in range(num_densya):
+            img_filename = densyaIMG_files[i]
+            #print("img_filenameは、",img_filename)
+            txt_filename = img_filename.replace(".jpg", ".txt")
+            #print("txt_filenameは、",txt_filename)
+            
+            # ファイルのパスを取得
+            img_path = os.path.join(data_folder, img_filename)
+            txt_path = os.path.join(data_folder, txt_filename)
+            
+            # 分割先のフォルダを選択
+            if i < num_train_densya:
+                #dest_folder = os.path.join(train_folder, "densya")
+                dest_folder = train_folder
+            elif i < num_train_densya + num_val_densya:
+                #dest_folder = os.path.join(val_folder, "densya")
+                dest_folder = val_folder
+            else:
+                #dest_folder = os.path.join(test_folder, "densya")
+                dest_folder = test_folder
+            
+            # ファイルの移動
+            shutil.move(img_path, os.path.join(dest_folder, img_filename))
+            #print(img_filename,"を移動しました")
+            shutil.move(txt_path, os.path.join(dest_folder, txt_filename))
+
+        # 新幹線データの分割
+        for i in range(num_shinkansen):
+            img_filename = shinkansenIMG_files[i]
+            txt_filename = img_filename.replace(".jpg", ".txt")
+            
+            # ファイルのパスを取得
+            img_path = os.path.join(data_folder, img_filename)
+            txt_path = os.path.join(data_folder, txt_filename)
+            
+            # 分割先のフォルダを選択
+            if i < num_train_shinkansen:
+                #dest_folder = os.path.join(train_folder, "shinkansen")
+                dest_folder = train_folder
+            elif i < num_train_shinkansen + num_val_shinkansen:
+                #dest_folder = os.path.join(val_folder, "shinkansen")
+                dest_folder = val_folder
+            else:
+                #dest_folder = os.path.join(test_folder, "shinkansen")
+                dest_folder = test_folder
+
+            # ファイルの移動
+            shutil.move(img_path, os.path.join(dest_folder, img_filename))
+            shutil.move(txt_path, os.path.join(dest_folder, txt_filename))
+
+        print("some files is made")
+            
+    #dataset.yamlを作っちゃうぞ
+    def make_yaml(self, input_folder_path):
+        save_path = input_folder_path + "dataset.yaml"
+        with open(save_path, "w") as f:
+            f.write(f"train: {input_folder_path}train/\n")
+            f.write(f"val: {input_folder_path}val/\n")
+            f.write(f"test: {input_folder_path}test/\n")
+            f.write("nc: 2\n")
+            f.write("names: ['shinkansen', 'densya']")
+        print("dataset.yaml is made")
+
+    def make_classes(self, input_folder_path):
+        text_save_path = os.path.join(input_folder_path, "classes.txt")
+        with open(text_save_path, "w") as f:
+            f.write("""shinkansen\ndensya""")
+        copy_test = input_folder_path + "test/"
+        copy_train = input_folder_path + "train/"
+        copy_val = input_folder_path + "val/"
+        shutil.copyfile(text_save_path, copy_test + "classes.txt")
+        shutil.copyfile(text_save_path, copy_train + "classes.txt")
+        shutil.copyfile(text_save_path, copy_val + "classes.txt")
+        print("make_classes")
+
+    def resize_sq(self,input_folder_path):
+
+        #new_fol='new_pic'
+        #新しいフォルダを作成
+        #os.makedirs(new_fol, exist_ok=True)
+        #画像ファイル一覧を取得
+        image_files = glob.glob(os.path.join(input_folder_path, '*.jpg')) 
+    
+        #調整後サイズを指定(横幅、縦高さ)
+        size=(900,900)
+        #リサイズ処理開始
+        for image_file in image_files:
+            base_pic=np.zeros((size[1],size[0],3),np.uint8)
+            pic1=cv2.imread(image_file,cv2.IMREAD_COLOR)
+            h,w=pic1.shape[:2]
+            ash=size[1]/h
+            asw=size[0]/w
+            if asw<ash:
+                sizeas=(int(w*asw),int(h*asw))
+            else:
+                sizeas=(int(w*ash),int(h*ash))
+            pic1 = cv2.resize(pic1,dsize=sizeas)
+            base_pic[int(size[1]/2-sizeas[1]/2):int(size[1]/2+sizeas[1]/2),
+            int(size[0]/2-sizeas[0]/2):int(size[0]/2+sizeas[0]/2),:]=pic1
+            cv2.imwrite(input_folder_path + image_file, base_pic)
+        print("resizedddd")
+
+    def count_images(self, folder_path):
+        image_extensions = ['.jpg', '.jpeg', '.png', '.gif']  # 画像ファイルの拡張子リスト
+        count = 0
+
+        for root, dirs, files in os.walk(folder_path):
+            for file in files:
+                _, extension = os.path.splitext(file)
+                if extension.lower() in image_extensions:
+                    count += 1
+
+        return count
+
+
+
+
