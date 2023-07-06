@@ -1,3 +1,5 @@
+from email.mime import base
+from lib2to3.pytree import BasePattern
 import project_processing01 as pp
 
 from TrainValTest_2 import devide_img
@@ -5,13 +7,13 @@ from CombineTwoFolders import combine,combine01
 
 
 #これから以下のフォルダにいっぱい画像を保存するぞ
-dataset_folder_path = "/home/nozaki/ML/ultralytics/pic/dataset0624/"
+base_path = "/home/nozaki/ML/ultralytics/pic/dataset0704/"
 
 #引数のtypeには電車の形式番号を入れる（例）521系→type = 521
-def save_densya(youtube_url, dataset_folder_path, save_sum, type):
+def save_densya(youtube_url, base_path, save_sum, type):
   
   #画像を保存する場所を指定
-  save_img_dir = dataset_folder_path + type + "/"
+  save_img_dir = base_path + type + "/"
   #動画から画像を保存する場所
   input_folder_path = save_img_dir
   #保存した画像で物体認識をした後に保存する場所
@@ -30,10 +32,10 @@ def save_densya(youtube_url, dataset_folder_path, save_sum, type):
   pp_instance_den.croping(train_type, number, input_folder_path, output_folder_path)
   print("おしまい")
 
-def save_shinkansen(youtube_url, dataset_folder_path, save_sum, type):
+def save_shinkansen(youtube_url, base_path, save_sum, type):
   
   #画像を保存する場所を指定
-  save_img_dir = dataset_folder_path + type + "/"
+  save_img_dir = base_path + type + "/"
   #動画から画像を保存する場所
   input_folder_path = save_img_dir
   #保存した画像で物体認識をした後に保存する場所
@@ -57,52 +59,70 @@ pp_instance_den = pp.project_processing()
 pp_instance_shin = pp.project_processing()
 
 
+#画像の保存枚数は400枚とする
+save_sum = 400
 #nの値によって保存する電車を変える。０の時は保存しない
-n = 0
+n = 5
 if n == 1:
     #313系
     youtube_url = "https://www.youtube.com/watch?v=SP0oAn8sQoU"
     type = "313"
+    save_densya(youtube_url, base_path, save_sum, type)
 elif n == 2:
     #415系
     youtube_url = "https://www.youtube.com/watch?v=EPn430ztgiA"
     type = "415"
+    save_densya(youtube_url, base_path, save_sum, type)
 elif n == 3:
     #521系
     youtube_url = "https://www.youtube.com/watch?v=BMEmhlf13aU"
     type = "521"
+    save_densya(youtube_url, base_path, save_sum, type)
 elif n == 4:
     #W7系
     youtube_url = "https://www.youtube.com/watch?v=ll0DX9DrdNk"
     type = "W7"
+    save_shinkansen(youtube_url, base_path, save_sum, type)
 elif n == 5:
-    #こまち、はやぶさ
-    youtube_url = "https://www.youtube.com/watch?v=qJmdUDJpFfA"
-    type = "E5&E6"
+    #こまち
+    youtube_url = "https://www.youtube.com/watch?v=Cr88elZQkyU"
+    type = "E5"
+    save_shinkansen(youtube_url, base_path, save_sum, type)
 
-
-
-save_sum = 400
-#save_densya(youtube_url, dataset_folder_path, save_sum, type)
-#save_shinkansen(youtube_url, dataset_folder_path, save_sum, type)
+#save_densya(youtube_url, base_path, save_sum, type)
+#save_shinkansen(youtube_url, base_path, save_sum, type)
 
 #フォルダ合体（二つを1つに）
 p = 0
+#
 if(p == 1):
-    folder1_path = "/home/nozaki/ML/ultralytics/pic/dataset0624/E5&E6/cropped"
-    folder2_path = "/home/nozaki/ML/ultralytics/pic/dataset0624/W7/cropped"
-    output_folder_path = "/home/nozaki/ML/ultralytics/pic/dataset0624/shin"
+    #新幹線と電車があるフォルダをまとめる
+    folder1_path = base_path + "shin/"
+    folder2_path = base_path + "den/"
+    output_folder_path =base_path + "data/"
     pp_instance_shin.combine(folder1_path, folder2_path, output_folder_path)
 elif(p == 2):
-    folder1_path =  "/home/nozaki/ML/ultralytics/pic/dataset0624/521/cropped"
-    folder2_path = "/home/nozaki/ML/ultralytics/pic/dataset0624/415/cropped"
-    output_folder_path = "/home/nozaki/ML/ultralytics/pic/dataset0624/den"
+    #電車と新幹線をそれぞれ一つずつにまとめる
+    folder1_path = base_path + "313/cropped"
+    folder2_path = base_path + "415/cropped"
+    #output_folder_path = base_path + "shin"
+    output_folder_path = base_path + "den"
     pp_instance_den.combine(folder1_path, folder2_path, output_folder_path)
 
+#pp_instance_den.make_yaml("/home/nozaki/ML/ultralytics/pic/dataset0625/")
+
 #フォルダ合体
-f = 1
+f = 0
 if(f == 1):
-    folder1_path = "/home/nozaki/ML/ultralytics/pic/dataset0624/521/cropped"
-    output_folder_path = "/home/nozaki/ML/ultralytics/pic/dataset0624/den"
+    folder1_path = base_path + "521/cropped/"
+    output_folder_path = base_path + "den"
     count = pp_instance_den.count_images(output_folder_path)
     pp_instance_den.combine01(folder1_path, output_folder_path, count)
+
+#train:val:testに分ける
+t = 0
+if(t == 1):
+    data_folder = base_path + "data/"
+    pp_instance_den.devide_img(data_folder)
+
+#pp_instance_den.make_yaml(base_path + "data/")

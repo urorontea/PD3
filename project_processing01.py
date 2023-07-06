@@ -1,3 +1,4 @@
+import re
 from ultralytics import YOLO
 import cv2
 import random
@@ -27,7 +28,7 @@ class project_processing:
     def get_random_frame(self, name, youtube_url, dir_path, img_num):
         ydl_opts = {
             'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4',
-            'outtmpl': '%(title)s.%(ext)s',
+            'outtmpl': 'movie/%(title)s.%(ext)s',
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(youtube_url, download=True)
@@ -99,36 +100,44 @@ class project_processing:
 
                 score = obj.confidence[j]
 
-                
-                if name == "train" and score >= 0.6:
+                #座標を０～１の間で表すぞ
+                # 画像の幅と高さを取得
+                image_width = image.shape[1]
+                image_height = image.shape[0]
 
-                    # 切り抜いた領域を取得
-                    cropped_img = image[int(ymin):int(ymax), int(xmin):int(xmax)]
+                # バウンディングボックスの座標をピクセル値から割合に変換
+                xmin_normalized = xmin / image_width
+                ymin_normalized = ymin / image_height
+                xmax_normalized = xmax / image_width
+                ymax_normalized = ymax / image_height
 
-                    #バウンディングボックスを描画する
-                    cv2.rectangle(image, (int(xmin), int(ymin)), (int(xmax), int(ymax)), (0, 255, 0), 2)
-                    
-                    # 保存先のパスを生成
-                    img_filename = f"{train_type}_{str(count).zfill(4)}.jpg"
+                     
+                if name == "train" and score >=0.7:
+                    #保存先のパスを生成
+                    filename = f"{train_type}_{str(count).zfill(4)}"
+                    img_filename = filename + ".jpg"
+                    #print(f"img_filename = {img_filename}")
                     save_path = os.path.join(output_folder_path, img_filename)
+                    #print(f"save_path = {save_path}")
 
-                    # 切り抜いた画像を保存
-                    cv2.imwrite(save_path, cropped_img)
-                    print(f"Saved {img_filename}")
+                    #電車の画像を保存
+                    #cv2.rectangle(image, (int(xmin), int(ymin)), (int(xmax), int(ymax)), (0, 255, 0), 2)
                     
-                    # 画像のサイズとオブジェクトの情報をテキストファイルに保存
-                    #アノテーションをしているよーん
-                    
-                    info = f"{number} 0.0 0.0 1.0 1.0"
+                    #cv2.rectangle(image, (int(xmin_normalized), int(ymin_normalized)), (int(xmax_normalized), int(ymax_normalized)), (0, 255, 0), 2)
+                    cv2.imwrite(save_path, image)
+                    #print(f"saved {img_filename}\n")
 
-                    text_filename = f"{train_type}_{str(count).zfill(4)}.txt"
-                    text_save_path = os.path.join(output_folder_path, text_filename)
-                    with open(text_save_path, "w") as f:
+                    #物体認識をしてゲットした座標情報をテキストファイルに保存
+                    info = f"{number} {xmin_normalized} {ymin_normalized} {xmax_normalized} {ymax_normalized}"
+                    text_filename = filename + ".txt"
+                    save_path = os.path.join(output_folder_path, text_filename)
+                    #オブジェクトの情報を書き込む
+                    with open(save_path, "w") as f:
                         #f.write(f"{cropped_img.shape[1]} {cropped_img.shape[0]}\n")  # 画像の幅と高さを書き込む
                         f.write(info)  # オブジェクトの情報を書き込む
 
                     count += 1 
-                        
+
         #classes.txtを作る
         info = """shinkansen\ndensya"""
 
@@ -139,6 +148,9 @@ class project_processing:
         #保存した画像を消す（物体認識をする前の画像を消す）
         # ディレクトリ内のファイルを取得
         file_list = os.listdir(input_folder_path)
+        #print("今から画像を消すよ")
+        #rint(file_list)
+        #print(input_folder_path)
 
         for file_name in file_list:
             file_path = os.path.join(input_folder_path, file_name)
@@ -186,22 +198,26 @@ class project_processing:
                     image_src = os.path.join(folder1_path, filename)
                     image_dst = os.path.join(output_folder_path, f"densya_{counter1:04d}.jpg")
                     shutil.copyfile(image_src, image_dst)
+                    """
 
                     txt_filename = filename.replace(".jpg", ".txt")
                     txt_src = os.path.join(folder1_path, txt_filename)
                     txt_dst = os.path.join(output_folder_path, f"densya_{counter1:04d}.txt")
                     shutil.copyfile(txt_src, txt_dst)
+                     """
 
                     counter1 += 1
+                    
                 elif "shinkansen" in filename:
                     image_src = os.path.join(folder1_path, filename)
                     image_dst = os.path.join(output_folder_path, f"shinkansen_{counter2:04d}.jpg")
                     shutil.copyfile(image_src, image_dst)
-
+                    """
                     txt_filename = filename.replace(".jpg", ".txt")
                     txt_src = os.path.join(folder1_path, txt_filename)
                     txt_dst = os.path.join(output_folder_path, f"shinkansen_{counter2:04d}.txt")
                     shutil.copyfile(txt_src, txt_dst)
+                    """
 
                     counter2 += 1
 
@@ -212,22 +228,27 @@ class project_processing:
                     image_src = os.path.join(folder2_path, filename)
                     image_dst = os.path.join(output_folder_path, f"densya_{counter1:04d}.jpg")
                     shutil.copyfile(image_src, image_dst)
+                    """
 
                     txt_filename = filename.replace(".jpg", ".txt")
                     txt_src = os.path.join(folder2_path, txt_filename)
                     txt_dst = os.path.join(output_folder_path, f"densya_{counter1:04d}.txt")
                     shutil.copyfile(txt_src, txt_dst)
+                     """
 
                     counter1 += 1
+                   
                 elif "shinkansen" in filename:
                     image_src = os.path.join(folder2_path, filename)
                     image_dst = os.path.join(output_folder_path, f"shinkansen_{counter2:04d}.jpg")
                     shutil.copyfile(image_src, image_dst)
+                    """
 
                     txt_filename = filename.replace(".jpg", ".txt")
                     txt_src = os.path.join(folder2_path, txt_filename)
                     txt_dst = os.path.join(output_folder_path, f"shinkansen_{counter2:04d}.txt")
                     shutil.copyfile(txt_src, txt_dst)
+                    """
 
                     counter2 += 1
 
@@ -241,23 +262,25 @@ class project_processing:
                     image_src = os.path.join(folder1_path, filename)
                     image_dst = os.path.join(output_folder_path, f"densya_{counter:04d}.jpg")
                     shutil.copyfile(image_src, image_dst)
-
+                    """
                     txt_filename = filename.replace(".jpg", ".txt")
                     txt_src = os.path.join(folder1_path, txt_filename)
                     txt_dst = os.path.join(output_folder_path, f"densya_{counter:04d}.txt")
                     shutil.copyfile(txt_src, txt_dst)
-
+                    """
                     counter += 1
 
                 elif "shinkansen" in filename:
                     image_src = os.path.join(folder1_path, filename)
                     image_dst = os.path.join(output_folder_path, f"shinkansen_{counter:04d}.jpg")
                     shutil.copyfile(image_src, image_dst)
+                    """
 
                     txt_filename = filename.replace(".jpg", ".txt")
                     txt_src = os.path.join(folder1_path, txt_filename)
                     txt_dst = os.path.join(output_folder_path, f"shinkansen_{counter:04d}.txt")
                     shutil.copyfile(txt_src, txt_dst)
+                    """
 
                     counter += 1
         print("conbined")

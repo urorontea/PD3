@@ -3,7 +3,7 @@ import random
 import shutil
 
 # フォルダのパスと分割比率の設定
-data_folder = "/home/nozaki/ML/ultralytics/pic/dataset0605"
+data_folder = "/home/nozaki/ML/ultralytics/pic/dataset0704/W7/cropped/"
 train_ratio = 0.7
 val_ratio = 0.2
 test_ratio = 0.1
