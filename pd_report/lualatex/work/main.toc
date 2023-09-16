@@ -1,0 +1,4 @@
+\contentsline {part}{第I部\hspace {1zw}北陸地方}{1}{}%
+\contentsline {section}{\numberline {1}はじめに}{1}{}%
+\contentsline {section}{\numberline {2}福井県は誰かの出身地}{1}{}%
+\contentsline {section}{\numberline {3}春江は誰かの出身地}{2}{}%

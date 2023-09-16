@@ -1,0 +1,299 @@
+% TEX STUDIO MAGIC-COMMAND
+% !TeX document-id = {21ffa6e2-6c8f-4532-897c-386dc477f19a}
+% !TeX root = presen.tex
+% !TeX encoding = utf8
+% !TeX TXS-program:compile = lualatex  -synctex=1 -interaction=nonstopmode -halt-on-error %.tex
+% !TeX TXS-program:quick = txs:///compile | txs:///view-pdf-internal --embedded
+%%%-------------------------------------------------------------------------
+%%% PD3プレゼンプレート
+%%% 作成： 金沢工大・情報工学科・鷹合研究室
+%%%-------------------------------------------------------------------------
+
+\input{tkg_slide.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\lstlistingname}{リスト}
+
+% 図・表・リストのcaption番号を表示するか/表示しないかを選ぶ
+\iffalse
+\usepackage[hang,bf,labelformat = empty,labelsep=none,figurename=Y, tablename=X, singlelinecheck=off,justification=centering,labelfont=bf,textfont=bf]{caption} 
+\else
+\usepackage[hang,bf,labelsep=colon,figurename=図, tablename=表, singlelinecheck=off,justification=centering,labelfont=bf,textfont=bf]{caption} 
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% タイトルスライドのロゴ画像
+% フッタ（左）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  フッタ（左側）
+
+  \MyLogo{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.pdf}}
+% \MyLogo{--- 鷹合研究室 ---} % トップスライドの下部中央
+
+  \lfoot{\includegraphics[height=.75cm]{fig/logo/kit_landscape1.pdf}}
+% \lfoot{\small 鷹合研}        % フッタ（左）
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% フッタ（中央，右）
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\cfoot{\thepage/\pageref{LastPage}} 
+\cfoot{\thepage/\pageref{LastPage}}
+\rfoot{\small 1EP999} % テーマ番号
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ページ番号を1からにしたら，トップスライドの下部のロゴがうまくいかなくなったのでこうしてみた
+\fancypagestyle{myfirstpage}
+{
+  \fancyhf{}
+   \fancyfoot[C]{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.pdf}}
+%  \fancyfoot[C]{鷹合研究室}
+   \renewcommand{\headrulewidth}{0pt} % removes horizontal header line
+}
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% ここから下を書き換えて下さい 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{
+{\normalsize 令和５年度 プロジェクトデザインIII}\\\vspace{10mm}
+{\LARGE 機械学習を用いた電車の車両タイプの\\判別システムの開発}
+}
+\date{令和5年9月22日}
+\author{
+4EP1-68\\ \ruby{野崎}{のざき}\ruby{悠渡}{ゆうと} \and
+4EP5-15\\ \ruby{田村}{たむら}\ruby{信長}{のぶなが} 
+}
+
+
+
+\begin{document}
+\maketitle % タイトルページ
+\addtocounter{page}{1}
+\thispagestyle{myfirstpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \foilhead{\Large 1. はじめに -- 背景と目的 -- \\ 建前編}
+\begin{itemize}
+ \item 現在，何が問題か（あるいは将来，何が問題になるか）を書く．\\
+ 世の中には似たようなものがたくさん存在している（動物や車，植物など）
+ 詳しく知ろうとしたときに，今見ているものが何なのか判別するまでに大きな労力が必要とされている．
+ \item その問題に対処するためには，どのようなものがあればよいか（あるいは取り組みが必要）かを書く．\\
+ 知りたいと思っているモノの写真から，それが何なのか判別できるシステムがあればこれまでよりも簡単に知ることができる．
+ \item 本プロジェクトでは何を使ってどんなものを作っているかを書く．\\
+ 本プロジェクトではYOLOv8を用いて，モノの識別をするシステムの開発を行う
+\end{itemize}
+\newpage
+
+\foilhead{\Large 1. はじめに--背景と目的-- \\ 本音編}
+\begin{itemize}
+	\item 走っている電車が何なのか簡単に知りたい．\\
+	紛らわしいのが多すぎる．\\
+	種類が多すぎる．\\
+	図鑑とにらめっこするのがダルいという問題がある．
+	\item この問題を解決するためには，画像から分類や識別ができるシステムがあれば良い．
+	\item YOLOを使って作っちゃうぞ
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 発表の流れ}
+\begin{enumerate}[itemsep=0.25\zh]
+	\item \textcolor{gray}{はじめに -- 背景と目的 --}
+	\item システム概要
+	\item 評価
+	\item むすび
+    \item \url{http://www.fujitsu.co.jp}
+\end{enumerate}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 2. システム概要}
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale = 1.3]{fig/system_2.drawio.pdf}
+\caption{システム概要図}
+\end{center}
+\end{figure}
+\newpage
+
+%%%%%%%%%%%%%%% minipage の利用例 %%%%%%%%%%%%%%%%%%%
+%------ 左側
+%\begin{minipage}[t]{0.4\textwidth}\vspace{0pt}
+{\Large YOLOとは}
+\begin{description}
+	\item YOLOはリアルタイムオブジェクト検出アルゴリズムである．
+	\item You Only Look Onceの略で，人間のようにひと目見ただけで物体検出ができる．
+	\item YOLOv8では，物体の識別と分類，セグメンテーションができる．
+	\newpage
+\end{description}
+	
+	
+\begin{figure}
+	
+		\begin{center}
+			\includegraphics[width=200mm]{fig/521_0.jpg}
+		\end{center}
+		\caption{識別}
+		\label{fig:one}
+\end{figure}
+
+\begin{figure}
+		\begin{center}
+			\includegraphics[width=200mm]{fig/521_2.png}
+		\end{center}
+		\caption{分類}
+		\label{fig:two}
+\end{figure}
+
+\begin{figure}
+		\begin{center}
+			\includegraphics[width=200mm]{fig/521_seg.png}
+		\end{center}
+		\caption{セグメンテーション}
+		\label{fig:three}
+\end{figure}
+
+
+%\end{minipage}
+%------ 右側
+%\begin{minipage}[t]{0.6\textwidth}\vspace{0pt}
+%\begin{center}
+%\includegraphics[keepaspectratio, width=.9\linewidth,trim={100mm 0mm 0mm 15mm},clip]{fig/system.pdf}
+%\end{center}
+%\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 2. 現時点までで行ったこと}
+\begin{description}
+	\item[画像収集の簡略化] ~\\
+	YoutubeのURLと車両タイプを指定することで，YouTubeの動画から車両が写っている部分を切り抜く.
+	
+		\item [集める画像の工夫]~\\
+		バウンディングボックスの中身のみ切り抜き，データセットに追加した
+	
+	
+	\item[モデルの学習]~\\
+	収集した画像からデータセットを作成して，モデルの学習を行った．
+	\begin{itemize}
+		\item 電車と新幹線を識別するモデル(YOLOv5)
+		\item ３種類の似ている電車を識別するモデル(YOLOv5)
+		\item 電車や新幹線の各車両を分類するモデル(YOLOv8)
+	\end{itemize}
+\end{description}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 3. 評価・考察}
+\begin{itemize}
+	\item このスライドでは何をどのような方法で評価したかを明記し，結果をグラフで示すこと（表よりグラフのほうが良い）．
+	\item システムが動いている様子がわかるようにデモ映像を流すこと（デモ映像には字幕をつけたりするなどしてわかりやすくすること）．
+	\item 評価の際は，改良の前後でどうなったかを示す．あるいは他の手法などと比較してどうなのかを示すことも必要．
+	\item 結果について考察も示すこと．
+\end{itemize}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 3. 評価・考察に書く内容}
+\begin{itemize}
+	\item アノテーションをする際に，バウンディングボックスの中身だけにすると不具合がおきたこと\\
+	ボックスの中身だけで学習させる際に何故かエポック数が１００回になっていた．
+	うまくいかないと思っていたがシンプルに学習回数が足りなかった？\\
+	背景画像の有無で物体認識の精度が悪くなったので，データセットの画像には背景画像が必要なのではないのかな
+
+	\item 電車と新幹線の識別モデルの作成→電車は百種類近くあるのでうまく行かなかった
+	\item 似ている電車を識別モデルを作成する際に，データセットの画像を増やすだけではうまくいかなかったこと\\
+	%\home\nozaki\ML\ultralytics\yolov5\runs\trian\exp21\ に２２５系，２２７系，５２１系の３種類の識別モデルのデータセットがある
+	\item 新幹線の分類はまぁまぁ上手くいったこと
+	%新幹線だけの分類モデルでs
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 4. むすび}\label{MUSUBI}
+\begin{itemize}
+	\item 何のために何を作成したかを改めて書く．
+	\item 現時点での評価結果，考察を簡潔に書く．
+	\item 来月の報告までに何をするか計画を書く．
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ここからおまけ
+
+\href{run:./demo002.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}} PDFファイルと同じフォルダにdemo002.mp4があれば再生できる．
+
+
+\href{https://youtu.be/74agBeJxdFI}{\textcolor{red}{\faYoutube}} YOUTUBEで再生
+
+\textcolor{red}{\faYoutube}\href{https://youtu.be/74agBeJxdFI}{~\url{https://youtu.be/74agBeJxdFI}}
+
+\lstinputlisting[language=c, caption=test2.c]{src/hello.c}
+\lstinputlisting[language=python, caption=test2.py]{src/world.py}
+
+% 色定義
+\definecolor{mygray}{gray}{0.95}
+\definecolor{mypink1}{hsb}{0.0, 0.188, 1.0}
+UNIXv1におけるタスク切り替えが行われるタイミング
+
+%%%%%%%%%%%%%%%%%%%%%%%%55
+\colorbox{mygray}{\begin{minipage}{\textwidth}
+① みなさん
+\end{minipage}}
+
+\colorbox{mygray}{\begin{minipage}{\textwidth}
+② こんにちは 
+\begin{itemize}
+\item まんじゅう
+\item りんご
+\end{itemize}
+\end{minipage}}
+
+\colorbox{mypink1}{\begin{minipage}{\textwidth}
+③ お元気で\\
+またあうひまで
+\end{minipage}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{verbatimx}
+$ gcc test.c \return
+ (*_*)
+ (*_*)
+        \textcolor{red}{ここで\keytop{CTL}+\keytop{C}を押す}
+\end{verbatimx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+~\\
+\noindent\textbf{謝辞}~~本研究はJSPS科研費21Kxxxxxxxxx助成を受けた
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 参考文献 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+\small
+\setlength\itemsep{-0.5\zh}%
+\bibitem{book1} K.Thompson，D.M.Ritchie，\textbf{"The UNIX Time-Sharing System"}，Communications of the ACM, Vol.17, No.7, 1974.
+\bibitem{book4} Digital Equipment Corporation: \textbf{PDP11/20-15-r20 Processor Handbook}, 1971.
+\bibitem{Preliminary} T.R. Bashkow, \textbf{"Study of UNIX: Preliminary Release of Unix Implementation Document"}, \url{ http://minnie.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf}, Jun. 1972.
+%\bibitem{book2} K. Thompson，D.M. Ritchie，"UNIX PROGRAMER'S MANUAL"，Nov. 1971.
+%\bibitem{web0} Warren Toomey, "The Unix Heritage Society", \url{https://www.tuhs.org/}, Dec. 2015.
+\bibitem{simh} simh, \textbf{"The Computer History Simulation Project"}, \url{https://github.com/simh/simh}, 参照Mar.14, 2022.
+\bibitem{ref0} W.Toomey, \textbf{"First Edition Unix: Its Creation and Restoration"}, IEEE Annals of the History of Computing, 32 (3), pp.74-82, 2010.
+%\bibitem{web1} Jim Huang, "Restoration of 1st Edition UNIX from Bell Laboratories", \url{https://github.com/jserv/unix-v1}, 参照Mar.14, 2022.
+\bibitem{book3} Diomidis.Spinellis，\textbf{"unix-history-repo"},  \url{https://github.com/dspinellis/unix-history-repo/tree/Research-V1}, 参照Mar.14, 2022.
+\bibitem{book5} Digital Equipment Copporation: \textbf{PDP11 Peripherals HandBook}, 1972.
+%\bibitem{book6} \url{https://github.com/No000/unix-v1-utils}
+%\bibitem{book7} \url{https://github.com/No000/UnixV1-SystemCallTracer}
+\end{thebibliography}
+
+\end{document} 
