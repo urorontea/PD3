@@ -65,10 +65,10 @@
 {\normalsize 令和５年度 プロジェクトデザインIII}\\\vspace{10mm}
 {\LARGE 機械学習を用いた電車の車両タイプの\\判別システムの開発}
 }
-\date{令和5年9月22日}
+\date{令和5年9月19日}
 \author{
 4EP1-68\\ \ruby{野崎}{のざき}\ruby{悠渡}{ゆうと} \and
-4EP5-15\\ \ruby{田村}{たむら}\ruby{信長}{のぶなが} 
+4EP4-75\\ \ruby{田村}{たむら}\ruby{優祐}{ゆうすけ} 
 }
 
 
@@ -103,7 +103,7 @@
 	現在,webでの実装を試みている．
 	
 	\item [野崎] モデルの作成~\\
-	画像を集めて学習させ，判断するためのモデルを作成している．
+	画像を集めて学習させ，判断するためのモデルを作成する．
 	
 \end{description}
 
@@ -179,7 +179,7 @@
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 2. 4 結び(UI)}
+\foilhead{\Large 2. 4 むすび(UI)}
 \begin{itemize}
 	\item 今回はブラウザの部分を作成した．
 	\item 今後はサーバ側の実装をしていくとともに，ブラウザのデザイン面での改良を勧めていく．
@@ -246,7 +246,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 2. 現時点までで行ったこと}
+\foilhead{\Large 3 現時点までで行ったこと}
 \begin{description}
 	\item[画像収集の簡略化] ~\\
 	YoutubeのURLと車両タイプを指定することで，YouTubeの動画から車両が写っている場面を保存する．
@@ -257,7 +257,7 @@
 	\begin{itemize}
 		%\item 電車と新幹線を識別するモデル(YOLOv5)
 		\item ３種類の似ている電車を識別するモデル(YOLOv5)
-		\item 電車や新幹線の各車両を分類するモデル(YOLOv8)
+		\item 新幹線の各車両を分類するモデル(YOLOv8)
 	\end{itemize}
 \end{description}
 \newpage
@@ -274,7 +274,7 @@
 %\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 3.1 評価・考察 --識別モデル--}
+\foilhead{\Large 4.1 評価・考察 --識別モデル--}
 \begin{description}
 	\item [似ている電車の識別] ~\\
 	\item 画像が300枚と4000枚のデータセットで，３種類の似ている電車の識別モデルの作成を行った．
@@ -289,7 +289,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 3. 2 評価・考察 --分類モデル--}
+\foilhead{\Large 4. 2 評価・考察 --分類モデル--}
 
 
 \begin{figure}
@@ -350,7 +350,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 4. むすび}\label{MUSUBI}
+\foilhead{\Large 5. むすび}\label{MUSUBI}
 \begin{itemize}
 	%\item 何のために何を作成したかを改めて書く．
 	%\item 現時点での評価結果，考察を簡潔に書く．
@@ -412,7 +412,7 @@
 \begin{comment}
 	
 
-%\begin{thebibliography}{99}
+\begin{thebibliography}{99}
 \small
 \setlength\itemsep{-0.5\zh}%
 \bibitem{book1} K.Thompson，D.M.Ritchie，\textbf{"The UNIX Time-Sharing System"}，Communications of the ACM, Vol.17, No.7, 1974.
@@ -430,13 +430,14 @@
 %\end{thebibliography}
 \end{comment}
 
-\begin{comment}
-\begin{thebiblography}
+%\begin{comment}
+\begin{thebibliography}{99}
 \small
 \setlength\itemsep{-0.5\zh}
-\bibitem{book1} ultralytics, 	\textbf{"yolov5"}, 
+\bibitem{book1} ultralytics,  \textbf{"yolov5"}, \url{https://github.com/ultralytics/yolov5},2023.9.18.
+\bibitem{book1} ultralytics,  \textbf{"yolov8"}, \url{https://github.com/ultralytics/ultralytics}, 2023.9.18.
 \end{thebibliography}
-\end{comment}
+%\end{comment}
 \end{document} 
 
 
