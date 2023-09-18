@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2023.5.22)  14 SEP 2023 18:08
+This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2023.5.22)  18 SEP 2023 12:00
  restricted system commands enabled.
 **presen.tex
 (./presen.tex
@@ -1344,6 +1344,11 @@ Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count343
+\c@subtable=\count344
+)
 (/usr/share/texlive/texmf-dist/tex/luatex/luatexja/patches/lltjp-footmisc.sty
 Package: lltjp-footmisc 2021-03-25 Patch to footmisc for LuaTeX-ja
 )
@@ -1354,42 +1359,42 @@ warning  (map file): entry for 'ascgrp' already exists, duplicates ignored
 )
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 23.94002pt on input line 76.
+(Font)              scaled to size 23.94002pt on input line 80.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 23.94002pt on input line 76.
+(Font)              scaled to size 23.94002pt on input line 80.
  (./presen.aux)
 \openout1 = presen.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    Trying loading font information for TS1+cmr on input line 7
-6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    Trying loading font information for TS1+cmr on input line 8
+0.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1427,16 +1432,16 @@ LaTeX Font Info:    ... okay on input line 76.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count343
+\scratchcounter=\count345
 \scratchdimen=\dimen315
 \scratchbox=\box138
-\nofMPsegments=\count344
-\nofMParguments=\count345
+\nofMPsegments=\count346
+\nofMParguments=\count347
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count346
+\MPscratchCnt=\count348
 \MPscratchDim=\dimen316
-\MPnumerator=\count347
-\makeMPintoPDFobject=\count348
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
 \everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1447,11 +1452,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count349
+\c@lstlisting=\count351
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 76.
-Package hyperref Info: Link coloring ON on input line 76.
+(lastpage)             ! on input line 80.
+Package hyperref Info: Link coloring ON on input line 80.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1462,11 +1467,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count350
+\c@section@level=\count352
 )
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
+LaTeX Info: Redefining \ref on input line 80.
+LaTeX Info: Redefining \pageref on input line 80.
+LaTeX Info: Redefining \nameref on input line 80.
 
 (./presen.out) (./presen.out)
 \@outlinefile=\write6
@@ -1476,93 +1481,93 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 34.4763pt on input line 78.
+(Font)              scaled to size 34.4763pt on input line 82.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 34.4763pt on input line 78.
+(Font)              scaled to size 34.4763pt on input line 82.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 34.4763pt on input line 78.
+(Font)              scaled to size 34.4763pt on input line 82.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 34.4763pt on input line 78.
+(Font)              scaled to size 34.4763pt on input line 82.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 23.94002pt on input line 78.
+(Font)              scaled to size 23.94002pt on input line 82.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 23.94002pt on input line 78.
+(Font)              scaled to size 23.94002pt on input line 82.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 41.37543pt on input line 78.
+(Font)              scaled to size 41.37543pt on input line 82.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 41.37543pt on input line 78.
+(Font)              scaled to size 41.37543pt on input line 82.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 16.72337pt on input line 78.
+(Font)              scaled to size 16.72337pt on input line 82.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 13.95218pt on input line 78.
+(Font)              scaled to size 13.95218pt on input line 82.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 11.97pt on input line 78.
+(Font)              scaled to size 11.97pt on input line 82.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 11.97pt on input line 78.
+(Font)              scaled to size 11.97pt on input line 82.
 
 warning  (file fig/logo/kit_landscape1.pdf) (pdf inclusion): PDF inclusion: foun
 d PDF version '1.7', but at most version '1.5' allowed
 <fig/logo/kit_landscape1.pdf, id=7, 695.29762pt x 70.84468pt>
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 82.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 86.
 (luatex.def)             Requested size: 307.1732pt x 31.2982pt.
 [1
 
 <./fig/logo/kit_landscape1.pdf>]
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 28.73186pt on input line 82.
+(Font)              scaled to size 28.73186pt on input line 86.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 28.73186pt on input line 82.
+(Font)              scaled to size 28.73186pt on input line 86.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 28.73186pt on input line 82.
+(Font)              scaled to size 28.73186pt on input line 86.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 28.73186pt on input line 82.
+(Font)              scaled to size 28.73186pt on input line 86.
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 91.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 95.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 19.95642pt on input line 91.
+(Font)              scaled to size 19.95642pt on input line 95.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 19.95642pt on input line 91.
+(Font)              scaled to size 19.95642pt on input line 95.
  [2]
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 92.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 96.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
  [3]
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 104.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 108.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
  [4]
 LaTeX Font Info:    Trying loading font information for T1+lmtt on input line 1
-10.
+14.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 112.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 116.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
  [5]
 warning  (file fig/system_2.drawio.pdf) (pdf inclusion): PDF inclusion: found PD
@@ -1570,48 +1575,48 @@ F version '1.7', but at most version '1.5' allowed
 <fig/system_2.drawio.pdf, id=53, 449.76028pt x 228.855pt>
 File: fig/system_2.drawio.pdf Graphic file (type pdf)
 <use fig/system_2.drawio.pdf>
-Package luatex.def Info: fig/system_2.drawio.pdf  used on input line 120.
+Package luatex.def Info: fig/system_2.drawio.pdf  used on input line 124.
 (luatex.def)             Requested size: 584.6883pt x 297.51144pt.
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 124.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 128.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
 [6<./fig/system_2.drawio.pdf>]
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 134.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 138.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
  [7]
 <fig/521_0.jpg, id=87, 1204.5pt x 803.0pt>
 File: fig/521_0.jpg Graphic file (type jpg)
 <use fig/521_0.jpg>
-Package luatex.def Info: fig/521_0.jpg  used on input line 141.
+Package luatex.def Info: fig/521_0.jpg  used on input line 145.
 (luatex.def)             Requested size: 569.05511pt x 379.38275pt.
 <fig/521_2.png, id=88, 1204.5pt x 803.0pt>
 File: fig/521_2.png Graphic file (type png)
 <use fig/521_2.png>
-Package luatex.def Info: fig/521_2.png  used on input line 149.
+Package luatex.def Info: fig/521_2.png  used on input line 153.
 (luatex.def)             Requested size: 569.05511pt x 379.38275pt.
 
 Overfull \vbox (23.50833pt too high) has occurred while \output is active []
 
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 153.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 157.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
 
 [8<./fig/521_0.jpg>]
 <fig/521_seg.png, id=96, 1204.5pt x 803.0pt>
 File: fig/521_seg.png Graphic file (type png)
 <use fig/521_seg.png>
-Package luatex.def Info: fig/521_seg.png  used on input line 157.
+Package luatex.def Info: fig/521_seg.png  used on input line 161.
 (luatex.def)             Requested size: 569.05511pt x 379.38275pt.
 
 Overfull \vbox (23.50833pt too high) has occurred while \output is active []
 
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 161.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 165.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
 
 [9<./fig/521_2.png>]
@@ -1619,190 +1624,119 @@ Overfull \vbox (23.50833pt too high) has occurred while \output is active []
 
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 177.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 181.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
 
-[10<./fig/521_seg.png>]
+[10<./fig/521_seg.png>](load cache: extra_fontawesome5free-regular.luc)
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 192.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 195.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
  [11]
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 194.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 224.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
  [12]
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 205.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [13]
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 219.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [14]
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 226.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [15]
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 232.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [16](load cache: extra_fontawesome5free-regular.luc)
+<fig/confusion_matrix.png, id=127, 867.24pt x 650.43pt>
+File: fig/confusion_matrix.png Graphic file (type png)
+<use fig/confusion_matrix.png>
+Package luatex.def Info: fig/confusion_matrix.png  used on input line 245.
+(luatex.def)             Requested size: 371.31224pt x 278.48848pt.
 
-LaTeX Font Warning: Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/solid/n' und
-efined
-(Font)              using `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' instead on i
-nput line 240.
-
-LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
-
-(Font)              scaled to size 23.94002pt on input line 240.
-
-LaTeX Font Warning: Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/solid/n' und
-efined
-(Font)              using `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' instead on i
-nput line 240.
-
-
-LaTeX Font Warning: Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/regular/n' u
-ndefined
-(Font)              using `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' instead on i
-nput line 240.
-
-LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
-
-(Font)              scaled to size 23.94002pt on input line 240.
-
-LaTeX Font Warning: Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/regular/n' u
-ndefined
-(Font)              using `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' instead on i
-nput line 240.
-
-LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/solid/n' wil
-l be
-(Font)              scaled to size 23.94002pt on input line 242.
-LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/solid/n' wil
-l be
-(Font)              scaled to size 23.94002pt on input line 242.
-LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/regular/n' w
-ill be
-(Font)              scaled to size 23.94002pt on input line 242.
-LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/regular/n' w
-ill be
-(Font)              scaled to size 23.94002pt on input line 242.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-)
-Removing  `ltj.process_input_buffer' from `process_input_buffer'.
-Inserting `ltj.listings_unicode' at position 1 in `process_input_buffer'.
-Inserting `ltj.process_input_buffer' at position 2 in `process_input_buffer'. (./src/hello.c
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 11.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-
-[17])
-Removing  `ltj.listings_unicode' from `process_input_buffer'.
-Removing  `ltj.process_input_buffer' from `process_input_buffer'.
-Inserting `ltj.listings_unicode' at position 1 in `process_input_buffer'.
-Inserting `ltj.process_input_buffer' at position 2 in `process_input_buffer'. (./src/world.py
-LaTeX Font Info:    Trying loading font information for TS1+lmtt on input line 
-5.
- (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
-Removing  `ltj.listings_unicode' from `process_input_buffer'.
-Overfull \hbox (20.0pt too wide) in paragraph at lines 255--256
-[][][][][][][] 
- []
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 263--264
-[][][][][][][] 
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 225--250
+[][]$[]$[]  []$[]$[] 
  []
 
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 268.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 250.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-[18]
-Overfull \hbox (20.0pt too wide) in paragraph at lines 268--270
-[][][][][][][] 
- []
-
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 278.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-[19]
+[13<./fig/confusion_matrix.png>]
+<fig/E7/E7_0000.png, id=136, 1027.84pt x 513.92pt>
+File: fig/E7/E7_0000.png Graphic file (type png)
+<use fig/E7/E7_0000.png>
+Package luatex.def Info: fig/E7/E7_0000.png  used on input line 256.
+(luatex.def)             Requested size: 216.81pt x 108.40472pt.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 19.95642pt on input line 285.
+(Font)              scaled to size 19.95642pt on input line 257.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 19.95642pt on input line 285.
-LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 19.95642pt on input line 257.
+<fig/E7/E7_0000-1.png, id=137, 1779.64874pt x 931.48pt>
+File: fig/E7/E7_0000-1.png Graphic file (type png)
+<use fig/E7/E7_0000-1.png>
+Package luatex.def Info: fig/E7/E7_0000-1.png  used on input line 260.
+(luatex.def)             Requested size: 216.81pt x 113.47836pt.
+<fig/E7/E7_0000-2.png, id=138, 1253.68375pt x 722.7pt>
+File: fig/E7/E7_0000-2.png Graphic file (type png)
+<use fig/E7/E7_0000-2.png>
+Package luatex.def Info: fig/E7/E7_0000-2.png  used on input line 265.
+(luatex.def)             Requested size: 216.81pt x 124.97466pt.
+<fig/E7/E7_0000-3.png, id=139, 624.3325pt x 575.14874pt>
+File: fig/E7/E7_0000-3.png Graphic file (type png)
+<use fig/E7/E7_0000-3.png>
+Package luatex.def Info: fig/E7/E7_0000-3.png  used on input line 269.
+(luatex.def)             Requested size: 216.81pt x 199.72539pt.
 
-(Font)              scaled to size 19.95642pt on input line 287.
-LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+Overfull \vbox (16.38075pt too high) has occurred while \output is active []
 
-(Font)              scaled to size 11.64285pt on input line 287.
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 294.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 277.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [20] 
+
+[14<./fig/E7/E7_0000.png><./fig/E7/E7_0000-1.png><./fig/E7/E7_0000-2.png><./fig/
+E7/E7_0000-3.png>]
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 290.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [15]
+LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+
+(Font)              scaled to size 19.95642pt on input line 345.
+LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+
+(Font)              scaled to size 11.64285pt on input line 345.
+ 
 AED: lastpage setting LastPage
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 299.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 357.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-[21] (./presen.aux)
+[16] (./presen.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.0pt have occurred.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `presen.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33823 strings out of 477805
- 244634,1373583 words of node,token memory allocated
- 37555 words of node memory still in use:
-   7 hlist, 1 vlist, 4 rule, 2 glue, 474 kern, 1 glyph, 14190 attribute, 833 glu
-e_spec, 742 attribute_list, 3 write, 235 user_defined, 2 pdf_action nodes
-   avail lists: 1:42,2:50080,3:307,4:4623,5:1031,6:52,7:2240,8:115,9:4430,10:22,
-11:185
- 52962 multiletter control sequences out of 65536+600000
- 102 fonts using 136789823 bytes
- 111i,15n,121p,1783b,1371s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texlive/texmf-dist/f
-onts/opentype/public/fontawesome5/FontAwesome5Brands-Regular-400.otf></usr/share
-/texlive/texmf-dist/fonts/opentype/public/fontawesome5/FontAwesome5Free-Regular-
-400.otf>{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf
--dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Regular.otf></usr/share/te
-xlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Bold.otf></usr/
-share/texlive/texmf-dist/fonts/type1/public/ascmac/ascgrp.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on presen.pdf (21 pages, 2218114 bytes).
+ 33592 strings out of 477805
+ 125244,1144653 words of node,token memory allocated
+ 34800 words of node memory still in use:
+   7 hlist, 1 vlist, 4 rule, 2 glue, 474 kern, 1 glyph, 13510 attribute, 602 glu
+e_spec, 702 attribute_list, 3 write, 195 user_defined, 2 pdf_action nodes
+   avail lists: 1:33,2:31053,3:340,4:207,5:88,6:44,7:2500,8:116,9:670,10:20,11:1
+2
+ 52792 multiletter control sequences out of 65536+600000
+ 101 fonts using 136726983 bytes
+ 111i,14n,121p,1783b,1146s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/opentype/public/fontawesome5/FontAwesome5Fr
+ee-Regular-400.otf>{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/te
+xlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Regular.otf></u
+sr/share/texlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Bold
+.otf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on presen.pdf (16 pages, 7714574 bytes).
 
-PDF statistics: 274 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 131072)
+PDF statistics: 209 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

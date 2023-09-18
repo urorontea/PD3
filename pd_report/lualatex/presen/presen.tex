@@ -73,6 +73,10 @@
 
 
 
+\usepackage{subcaption}
+
+
+
 \begin{document}
 \maketitle % タイトルページ
 \addtocounter{page}{1}
@@ -177,16 +181,13 @@
 \foilhead{\Large 2. 現時点までで行ったこと}
 \begin{description}
 	\item[画像収集の簡略化] ~\\
-	YoutubeのURLと車両タイプを指定することで，YouTubeの動画から車両が写っている部分を切り抜く.
-	
-		\item [集める画像の工夫]~\\
-		バウンディングボックスの中身のみ切り抜き，データセットに追加した
-	
+	YoutubeのURLと車両タイプを指定することで，YouTubeの動画から車両が写っている場面を保存する．
+	\href{run:./fig/demo.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}}
 	
 	\item[モデルの学習]~\\
 	収集した画像からデータセットを作成して，モデルの学習を行った．
 	\begin{itemize}
-		\item 電車と新幹線を識別するモデル(YOLOv5)
+		%\item 電車と新幹線を識別するモデル(YOLOv5)
 		\item ３種類の似ている電車を識別するモデル(YOLOv5)
 		\item 電車や新幹線の各車両を分類するモデル(YOLOv8)
 	\end{itemize}
@@ -195,89 +196,146 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 3. 評価・考察}
-\begin{itemize}
-	\item このスライドでは何をどのような方法で評価したかを明記し，結果をグラフで示すこと（表よりグラフのほうが良い）．
-	\item システムが動いている様子がわかるようにデモ映像を流すこと（デモ映像には字幕をつけたりするなどしてわかりやすくすること）．
-	\item 評価の際は，改良の前後でどうなったかを示す．あるいは他の手法などと比較してどうなのかを示すことも必要．
-	\item 結果について考察も示すこと．
-\end{itemize}
-\newpage
+%\foilhead{\Large 3. 評価・考察}
+%\begin{itemize}
+%	\item このスライドでは何をどのような方法で評価したかを明記し，結果をグラフで示すこと（表よりグラフのほうが良い）．
+%	\item %システムが動いている様子がわかるようにデモ映像を流すこと（デモ映像には字幕をつけたりするなどしてわかりやすくすること）．
+%	\item 評価の際は，改良の前後でどうなったかを示す．あるいは他の手法などと比較してどうなのかを示すことも必要．
+%	\item 結果について考察も示すこと．
+%\end{itemize}
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 3.評価・考察 --識別モデル--}
+\begin{description}
+	\item [似ている電車の識別] ~\\
+	\item ３種類の似ている電車の識別モデルの作成を行った．\\
+	画像が300枚と4000枚のデータセットを準備した．\\
+	それぞれ学習した結果を使用してテストデータをした．
+	\href{run:./fig/hikaku/hikaku_demo.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}}\\
+	識別結果からデータセットを増やしていけば，似ている電車でも識別することが可能だと考えられる．
+	しかし4000枚のデータセットでの学習時間は10時間以上かかっており，今後識別したい電車の種類を増やしていくと学習時間が増えてしまう．
+
+
+\end{description}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 3. 評価・考察に書く内容}
-\begin{itemize}
-	\item アノテーションをする際に，バウンディングボックスの中身だけにすると不具合がおきたこと\\
-	ボックスの中身だけで学習させる際に何故かエポック数が１００回になっていた．
-	うまくいかないと思っていたがシンプルに学習回数が足りなかった？\\
-	背景画像の有無で物体認識の精度が悪くなったので，データセットの画像には背景画像が必要なのではないのかな
+\foilhead{\Large 3. 評価・考察 --分類モデル--}
+\begin{minipage}[]{0.4\textwidth}\vspace{0pt}
+	\begin{description}
+		%\item アノテーションをする際に，バウンディングボックスの中身だけにすると不具合がおきたこと\\
+		%ボックスの中身だけで学習させる際に何故かエポック数が１００回になっていた．
+		%うまくいかないと思っていたがシンプルに学習回数が足りなかった？\\
+		%背景画像の有無で物体認識の精度が悪くなったので，データセットの画像には背景画像が必要なのではないのかな
+	
+		%\item 電車と新幹線の識別モデルの作成→電車は百種類近くあるのでうまく行かなかった
+		%\item 似ている電車を識別モデルを作成する際に，データセットの画像を増やすだけではうまくいかなかったこと\\
+		%\home\nozaki\ML\ultralytics\yolov5\runs\trian\exp21\ に２２５系，２２７系，５２１系の３種類の識別モデルのデータセットがある
+		
+	    \item [新幹線の分類]~\\
+		新幹線は色がかなり特徴的で分類がしやすいと考えられる．
+		
+	\end{description}
+\end{minipage}
+	\hfill
+\begin{minipage}[]{0.6\textwidth}\vspace{0pt}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.75\linewidth]{fig/confusion_matrix}
+		\caption{学習の評価}
+		\label{fig:confusionmatrix}
+	\end{figure}
+\end{minipage}
+\newpage
 
-	\item 電車と新幹線の識別モデルの作成→電車は百種類近くあるのでうまく行かなかった
-	\item 似ている電車を識別モデルを作成する際に，データセットの画像を増やすだけではうまくいかなかったこと\\
-	%\home\nozaki\ML\ultralytics\yolov5\runs\trian\exp21\ に２２５系，２２７系，５２１系の３種類の識別モデルのデータセットがある
-	\item 新幹線の分類はまぁまぁ上手くいったこと
-	%新幹線だけの分類モデルでs
-\end{itemize}
 
+
+\begin{figure}[htbp]
+	\begin{minipage}[b]{.5\linewidth}
+		\includegraphics[width=3in]{fig/E7/E7_0000.png}
+		\subcaption{元画像}\label{PIC1}
+	\end{minipage}%
+	\begin{minipage}[b]{.5\linewidth}
+		\includegraphics[width=3in]{fig/E7/E7_0000-1.png}
+		\subcaption{拡大1}\label{PIC2}
+	\end{minipage}%
+	\\ % 改行
+	\begin{minipage}[b]{.5\linewidth}
+		\includegraphics[width=3in]{fig/E7/E7_0000-2.png}
+		\subcaption{拡大2}\label{PIC3.jpg}
+	\end{minipage}%
+	\begin{minipage}[b]{.5\linewidth}
+		\includegraphics[width=3in]{fig/E7/E7_0000-3.png}
+		\subcaption{拡大3}\label{PIC4}
+	\end{minipage}%
+
+	\caption{画像を拡大することによる分類への影響}\label{DENSHA}
+\end{figure}
+
+
+\newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \foilhead{\Large 4. むすび}\label{MUSUBI}
 \begin{itemize}
-	\item 何のために何を作成したかを改めて書く．
-	\item 現時点での評価結果，考察を簡潔に書く．
-	\item 来月の報告までに何をするか計画を書く．
+	%\item 何のために何を作成したかを改めて書く．
+	%\item 現時点での評価結果，考察を簡潔に書く．
+	%\item 来月の報告までに何をするか計画を書く．
+	\item 電車の車両型式を簡単に知るために分類モデルを作成した．
+	\item 新幹線については，まぁまぁの精度で分類できるようになった．
+	\item 今後は，新幹線以外の電車の分類モデルを作成する．
 \end{itemize}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ここからおまけ
+%ここからおまけ
 
-\href{run:./demo002.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}} PDFファイルと同じフォルダにdemo002.mp4があれば再生できる．
+%\href{run:./fig/demo.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}} PDFファイルと同じフォルダにdemo002.mp4があれば再生できる．
 
 
-\href{https://youtu.be/74agBeJxdFI}{\textcolor{red}{\faYoutube}} YOUTUBEで再生
+%\href{https://youtu.be/74agBeJxdFI}{\textcolor{red}{\faYoutube}} YOUTUBEで再生
 
-\textcolor{red}{\faYoutube}\href{https://youtu.be/74agBeJxdFI}{~\url{https://youtu.be/74agBeJxdFI}}
+%\textcolor{red}{\faYoutube}\href{https://youtu.be/74agBeJxdFI}{~\url{https://youtu.be/74agBeJxdFI}}
 
-\lstinputlisting[language=c, caption=test2.c]{src/hello.c}
-\lstinputlisting[language=python, caption=test2.py]{src/world.py}
+%\lstinputlisting[language=c, caption=test2.c]{src/hello.c}
+%\lstinputlisting[language=python, caption=test2.py]{src/world.py}
 
 % 色定義
-\definecolor{mygray}{gray}{0.95}
-\definecolor{mypink1}{hsb}{0.0, 0.188, 1.0}
-UNIXv1におけるタスク切り替えが行われるタイミング
+%\definecolor{mygray}{gray}{0.95}
+%\definecolor{mypink1}{hsb}{0.0, 0.188, 1.0}
+%UNIXv1におけるタスク切り替えが行われるタイミング
 
 %%%%%%%%%%%%%%%%%%%%%%%%55
-\colorbox{mygray}{\begin{minipage}{\textwidth}
-① みなさん
-\end{minipage}}
+%\colorbox{mygray}{%\begin{minipage}{\textwidth}
+%① みなさん
+%\end{minipage}}
 
-\colorbox{mygray}{\begin{minipage}{\textwidth}
-② こんにちは 
-\begin{itemize}
-\item まんじゅう
-\item りんご
-\end{itemize}
-\end{minipage}}
+%\colorbox{mygray}{\begin{minipage}{\textwidth}
+%② こんにちは 
+%\begin{itemize}
+%\item まんじゅう
+%\item りんご
+%\end{itemize}
+%\end{minipage}}
 
-\colorbox{mypink1}{\begin{minipage}{\textwidth}
-③ お元気で\\
-またあうひまで
-\end{minipage}}
+%\colorbox{mypink1}{\begin{minipage}{\textwidth}
+%③ お元気で\\
+%またあうひまで
+%\end{minipage}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{verbatimx}
-$ gcc test.c \return
- (*_*)
- (*_*)
-        \textcolor{red}{ここで\keytop{CTL}+\keytop{C}を押す}
-\end{verbatimx}
+%\begin{verbatimx}
+%$ gcc test.c \return
+ %(*_*)
+ %(*_*)
+%        \textcolor{red}{ここで\keytop{CTL}+\keytop{C}を押す}
+%\end{verbatimx}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-~\\
-\noindent\textbf{謝辞}~~本研究はJSPS科研費21Kxxxxxxxxx助成を受けた
+%\newpage
+%~\\
+%\noindent\textbf{謝辞}~~本研究はJSPS科研費21Kxxxxxxxxx助成を受けた
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 参考文献 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thebibliography}{99}
 \small
