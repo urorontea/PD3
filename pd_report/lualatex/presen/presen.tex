@@ -100,11 +100,11 @@
 \foilhead{\Large 1. はじめに--背景と目的-- \\ }
 \begin{itemize}
 	\item 電車は種類が多く，何系か判断することが難しい．
-	\item この問題を解決するためには，画像から分類や識別ができるシステムがあれば良い．
-	\item YOLOを使用して，判断するものを開発する．
+	\item この問題を解決するためには，画像から分類や識別ができる\\システムがあれば良い．
+	\item YOLOを使用して，車両タイプを判断するものを開発する．
 \end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 発表の流れ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%\
+\foilhead{\Large 発表の流れ}\
 \begin{enumerate}[itemsep=0.25\zh]
 	\item \textcolor{gray}{はじめに -- 背景と目的 --}
 	\item システム概要
@@ -133,7 +133,7 @@
 \begin{description}
 	\item YOLOはリアルタイムオブジェクト検出アルゴリズムである．
 	\item You Only Look Onceの略で，人間のようにひと目見ただけで物体検出ができる．
-	\item YOLOv5は，物体に識別ができる．
+	\item YOLOv5は，物体の識別ができる．
 	\item YOLOv8では，物体の識別と分類，セグメンテーションができる．
 	\newpage
 \end{description}
@@ -206,7 +206,7 @@
 %\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 3.評価・考察 --識別モデル--}
+\foilhead{\Large 3.1 評価・考察 --識別モデル--}
 \begin{description}
 	\item [似ている電車の識別] ~\\
 	\item ３種類の似ている電車の識別モデルの作成を行った．\\
@@ -222,8 +222,8 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 3. 評価・考察 --分類モデル--}
-\begin{minipage}[]{0.4\textwidth}\vspace{0pt}
+\foilhead{\Large 3. 2 評価・考察 --分類モデル--}
+\begin{minipage}[]{0.45\textwidth}\vspace{0pt}
 	\begin{description}
 		%\item アノテーションをする際に，バウンディングボックスの中身だけにすると不具合がおきたこと\\
 		%ボックスの中身だけで学習させる際に何故かエポック数が１００回になっていた．
@@ -235,7 +235,7 @@
 		%\home\nozaki\ML\ultralytics\yolov5\runs\trian\exp21\ に２２５系，２２７系，５２１系の３種類の識別モデルのデータセットがある
 		
 	    \item [新幹線の分類]~\\
-		新幹線は色がかなり特徴的で分類がしやすいと考えられる．
+		新幹線は形は似ているが\\色が特徴的で分類がしやすいと考えられる．
 		
 	\end{description}
 \end{minipage}

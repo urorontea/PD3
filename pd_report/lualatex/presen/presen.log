@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2023.5.22)  18 SEP 2023 12:29
+This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2023.5.22)  18 SEP 2023 12:42
  restricted system commands enabled.
 **presen.tex
 (./presen.tex
@@ -1637,7 +1637,7 @@ File: fig/confusion_matrix.png Graphic file (type png)
 Package luatex.def Info: fig/confusion_matrix.png  used on input line 246.
 (luatex.def)             Requested size: 371.31224pt x 278.48848pt.
 
-Overfull \hbox (5.19925pt too wide) in paragraph at lines 226--251
+Overfull \hbox (46.45827pt too wide) in paragraph at lines 226--251
 [][]$[]$[]  []$[]$[] 
  []
 
@@ -1701,8 +1701,8 @@ Package rerunfilecheck Info: File `presen.out' has not changed.
 Here is how much of LuaTeX's memory you used:
  33568 strings out of 477805
  125244,1144653 words of node,token memory allocated
- 31245 words of node memory still in use:
-   7 hlist, 1 vlist, 4 rule, 2 glue, 433 kern, 1 glyph, 12239 attribute, 488 glu
+ 31260 words of node memory still in use:
+   7 hlist, 1 vlist, 4 rule, 2 glue, 433 kern, 1 glyph, 12239 attribute, 491 glu
 e_spec, 635 attribute_list, 3 write, 172 user_defined nodes
    avail lists: 1:28,2:15645,3:140,4:220,5:36,6:43,7:902,8:13,9:504,10:17,11:6
  52788 multiletter control sequences out of 65536+600000
@@ -1715,7 +1715,7 @@ sr/share/texlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Bold
 .otf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmssbx10.pfb>
-Output written on presen.pdf (14 pages, 7670356 bytes).
+Output written on presen.pdf (14 pages, 7670510 bytes).
 
 PDF statistics: 177 PDF objects out of 1000 (max. 8388607)
  127 compressed objects within 2 object streams
