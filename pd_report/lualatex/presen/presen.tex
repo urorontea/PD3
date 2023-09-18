@@ -74,7 +74,7 @@
 
 
 \usepackage{subcaption}
-
+\usepackage{comment}
 
 
 \begin{document}
@@ -83,6 +83,7 @@
 \thispagestyle{myfirstpage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
  \foilhead{\Large 1. はじめに -- 背景と目的 -- \\ 建前編}
 \begin{itemize}
  \item 現在，何が問題か（あるいは将来，何が問題になるか）を書く．\\
@@ -94,15 +95,13 @@
  本プロジェクトではYOLOv8を用いて，モノの識別をするシステムの開発を行う
 \end{itemize}
 \newpage
+\end{comment}
 
-\foilhead{\Large 1. はじめに--背景と目的-- \\ 本音編}
+\foilhead{\Large 1. はじめに--背景と目的-- \\ }
 \begin{itemize}
-	\item 走っている電車が何なのか簡単に知りたい．\\
-	紛らわしいのが多すぎる．\\
-	種類が多すぎる．\\
-	図鑑とにらめっこするのがダルいという問題がある．
+	\item 電車は種類が多く，何系か判断することが難しい．
 	\item この問題を解決するためには，画像から分類や識別ができるシステムがあれば良い．
-	\item YOLOを使って作っちゃうぞ
+	\item YOLOを使用して，判断するものを開発する．
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \foilhead{\Large 発表の流れ}
@@ -111,7 +110,7 @@
 	\item システム概要
 	\item 評価
 	\item むすび
-    \item \url{http://www.fujitsu.co.jp}
+    %\item \url{http://www.fujitsu.co.jp}
 \end{enumerate}
 \newpage
 
@@ -134,6 +133,7 @@
 \begin{description}
 	\item YOLOはリアルタイムオブジェクト検出アルゴリズムである．
 	\item You Only Look Onceの略で，人間のようにひと目見ただけで物体検出ができる．
+	\item YOLOv5は，物体に識別ができる．
 	\item YOLOv8では，物体の識別と分類，セグメンテーションができる．
 	\newpage
 \end{description}
@@ -211,12 +211,13 @@
 	\item [似ている電車の識別] ~\\
 	\item ３種類の似ている電車の識別モデルの作成を行った．\\
 	画像が300枚と4000枚のデータセットを準備した．\\
-	それぞれ学習した結果を使用してテストデータをした．
+	それぞれ学習した結果を使用してテストデータを識別した．
 	\href{run:./fig/hikaku/hikaku_demo.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}}\\
-	識別結果からデータセットを増やしていけば，似ている電車でも識別することが可能だと考えられる．
-	しかし4000枚のデータセットでの学習時間は10時間以上かかっており，今後識別したい電車の種類を増やしていくと学習時間が増えてしまう．
-
-
+	\newpage
+	
+	\item 識別結果からデータセットを増やしていけば，\\似ている電車でも識別することが可能だと考えられる．
+	\item しかし4000枚のデータセットでの学習時間は10時間以上かかっており，\\識別したい電車の種類を増やしていくと学習時間が増えてしまう．
+	\item YOLOv8は処理速度が早く精度が高いという特徴があるので，100種類以上の車両タイプを判断する場合にはYOLOv8を使う必要があると考えられる．
 \end{description}
 
 
@@ -272,6 +273,7 @@
 
 	\caption{画像を拡大することによる分類への影響}\label{DENSHA}
 \end{figure}
+
 
 
 \newpage
@@ -337,6 +339,9 @@
 %~\\
 %\noindent\textbf{謝辞}~~本研究はJSPS科研費21Kxxxxxxxxx助成を受けた
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 参考文献 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+	
+
 \begin{thebibliography}{99}
 \small
 \setlength\itemsep{-0.5\zh}%
@@ -353,5 +358,6 @@
 %\bibitem{book6} \url{https://github.com/No000/unix-v1-utils}
 %\bibitem{book7} \url{https://github.com/No000/UnixV1-SystemCallTracer}
 \end{thebibliography}
+\end{comment}
 
 \end{document} 
