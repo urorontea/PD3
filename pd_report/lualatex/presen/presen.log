@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2023.5.22)  18 SEP 2023 12:42
+This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2023.5.22)  18 SEP 2023 20:45
  restricted system commands enabled.
 **presen.tex
 (./presen.tex
@@ -1525,169 +1525,224 @@ d PDF version '1.7', but at most version '1.5' allowed
 <fig/logo/kit_landscape1.pdf, id=7, 695.29762pt x 70.84468pt>
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 100.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 99.
 (luatex.def)             Requested size: 307.1732pt x 31.2982pt.
 [1
 
 <./fig/logo/kit_landscape1.pdf>]
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 28.73186pt on input line 100.
+(Font)              scaled to size 28.73186pt on input line 99.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 28.73186pt on input line 100.
+(Font)              scaled to size 28.73186pt on input line 99.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 28.73186pt on input line 100.
+(Font)              scaled to size 28.73186pt on input line 99.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 28.73186pt on input line 100.
+(Font)              scaled to size 28.73186pt on input line 99.
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 107.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 112.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 19.95642pt on input line 107.
+(Font)              scaled to size 19.95642pt on input line 112.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
 
-(Font)              scaled to size 19.95642pt on input line 107.
+(Font)              scaled to size 19.95642pt on input line 112.
  [2]
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 115.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 119.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
  [3]
-warning  (file fig/system_2.drawio.pdf) (pdf inclusion): PDF inclusion: found PD
-F version '1.7', but at most version '1.5' allowed
-<fig/system_2.drawio.pdf, id=38, 449.76028pt x 228.855pt>
-File: fig/system_2.drawio.pdf Graphic file (type pdf)
-<use fig/system_2.drawio.pdf>
-Package luatex.def Info: fig/system_2.drawio.pdf  used on input line 123.
-(luatex.def)             Requested size: 584.6883pt x 297.51144pt.
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 127.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 128.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-[4<./fig/system_2.drawio.pdf>]
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 138.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [5]
-<fig/521_0.jpg, id=72, 1204.5pt x 803.0pt>
-File: fig/521_0.jpg Graphic file (type jpg)
-<use fig/521_0.jpg>
-Package luatex.def Info: fig/521_0.jpg  used on input line 145.
-(luatex.def)             Requested size: 569.05511pt x 379.38275pt.
-<fig/521_2.png, id=73, 1204.5pt x 803.0pt>
-File: fig/521_2.png Graphic file (type png)
-<use fig/521_2.png>
-Package luatex.def Info: fig/521_2.png  used on input line 153.
-(luatex.def)             Requested size: 569.05511pt x 379.38275pt.
+ [4]
+<fig/tamura/gaiyou.png, id=45, 462.72874pt x 242.9075pt>
+File: fig/tamura/gaiyou.png Graphic file (type png)
+<use fig/tamura/gaiyou.png>
+Package luatex.def Info: fig/tamura/gaiyou.png  used on input line 134.
+(luatex.def)             Requested size: 453.82397pt x 238.23674pt.
 
-Overfull \vbox (23.50833pt too high) has occurred while \output is active []
-
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 157.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-
-[6<./fig/521_0.jpg>]
-<fig/521_seg.png, id=81, 1204.5pt x 803.0pt>
-File: fig/521_seg.png Graphic file (type png)
-<use fig/521_seg.png>
-Package luatex.def Info: fig/521_seg.png  used on input line 161.
-(luatex.def)             Requested size: 569.05511pt x 379.38275pt.
-
-Overfull \vbox (23.50833pt too high) has occurred while \output is active []
-
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 165.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-
-[7<./fig/521_2.png>]
-Overfull \vbox (23.50833pt too high) has occurred while \output is active []
-
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 181.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-
-[8<./fig/521_seg.png>](load cache: extra_fontawesome5free-regular.luc)
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 195.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [9]
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 216.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [10]
-File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
-<use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 225.
-(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [11]
-<fig/confusion_matrix.png, id=118, 867.24pt x 650.43pt>
-File: fig/confusion_matrix.png Graphic file (type png)
-<use fig/confusion_matrix.png>
-Package luatex.def Info: fig/confusion_matrix.png  used on input line 246.
-(luatex.def)             Requested size: 371.31224pt x 278.48848pt.
-
-Overfull \hbox (46.45827pt too wide) in paragraph at lines 226--251
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 131--150
 [][]$[]$[]  []$[]$[] 
  []
 
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 251.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 150.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
-[12<./fig/confusion_matrix.png>]
-<fig/E7/E7_0000.png, id=127, 1027.84pt x 513.92pt>
+[5<./fig/tamura/gaiyou.png>]
+<fig/tamura/gaiyou_point.png, id=59, 462.72874pt x 268.00125pt>
+File: fig/tamura/gaiyou_point.png Graphic file (type png)
+<use fig/tamura/gaiyou_point.png>
+Package luatex.def Info: fig/tamura/gaiyou_point.png  used on input line 155.
+(luatex.def)             Requested size: 495.083pt x 286.74213pt.
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 161.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [6<./fig/tamura/gaiyou_point.png>](load cache: extra_fontawesome5free-regular.l
+uc)
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 172.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [7]
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 180.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [8]
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 188.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+
+[9]
+warning  (file fig/system_2.drawio.pdf) (pdf inclusion): PDF inclusion: found PD
+F version '1.7', but at most version '1.5' allowed
+<fig/system_2.drawio.pdf, id=89, 449.76028pt x 228.855pt>
+File: fig/system_2.drawio.pdf Graphic file (type pdf)
+<use fig/system_2.drawio.pdf>
+Package luatex.def Info: fig/system_2.drawio.pdf  used on input line 193.
+(luatex.def)             Requested size: 584.6883pt x 297.51144pt.
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 197.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+[10<./fig/system_2.drawio.pdf>]
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 208.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [11]
+<fig/521_0.jpg, id=124, 1204.5pt x 803.0pt>
+File: fig/521_0.jpg Graphic file (type jpg)
+<use fig/521_0.jpg>
+Package luatex.def Info: fig/521_0.jpg  used on input line 213.
+(luatex.def)             Requested size: 569.05511pt x 379.38275pt.
+<fig/521_2.png, id=125, 1204.5pt x 803.0pt>
+File: fig/521_2.png Graphic file (type png)
+<use fig/521_2.png>
+Package luatex.def Info: fig/521_2.png  used on input line 221.
+(luatex.def)             Requested size: 569.05511pt x 379.38275pt.
+
+Overfull \vbox (23.50833pt too high) has occurred while \output is active []
+
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 225.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+
+[12<./fig/521_0.jpg>]
+<fig/521_seg.png, id=133, 1204.5pt x 803.0pt>
+File: fig/521_seg.png Graphic file (type png)
+<use fig/521_seg.png>
+Package luatex.def Info: fig/521_seg.png  used on input line 229.
+(luatex.def)             Requested size: 569.05511pt x 379.38275pt.
+
+Overfull \vbox (23.50833pt too high) has occurred while \output is active []
+
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 233.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+
+[13<./fig/521_2.png>]
+Overfull \vbox (23.50833pt too high) has occurred while \output is active []
+
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 249.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+
+[14<./fig/521_seg.png>]
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 263.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [15]
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 283.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [16]
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 292.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [17]
+<fig/confusion_matrix.png, id=169, 867.24pt x 650.43pt>
+File: fig/confusion_matrix.png Graphic file (type png)
+<use fig/confusion_matrix.png>
+Package luatex.def Info: fig/confusion_matrix.png  used on input line 297.
+(luatex.def)             Requested size: 495.083pt x 371.31465pt.
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 302.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [18]
+Overfull \vbox (11.44023pt too high) has occurred while \output is active []
+
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 302.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+
+[19<./fig/confusion_matrix.png>]
+File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
+<use fig/logo/kit_landscape1.pdf>
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 322.
+(luatex.def)             Requested size: 209.42903pt x 21.33955pt.
+ [20]
+<fig/E7/E7_0000.png, id=190, 1027.84pt x 513.92pt>
 File: fig/E7/E7_0000.png Graphic file (type png)
 <use fig/E7/E7_0000.png>
-Package luatex.def Info: fig/E7/E7_0000.png  used on input line 257.
+Package luatex.def Info: fig/E7/E7_0000.png  used on input line 327.
 (luatex.def)             Requested size: 216.81pt x 108.40472pt.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 19.95642pt on input line 258.
+(Font)              scaled to size 19.95642pt on input line 328.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/bx/n' will b
 e
-(Font)              scaled to size 19.95642pt on input line 258.
-<fig/E7/E7_0000-1.png, id=128, 1779.64874pt x 931.48pt>
+(Font)              scaled to size 19.95642pt on input line 328.
+<fig/E7/E7_0000-1.png, id=191, 1779.64874pt x 931.48pt>
 File: fig/E7/E7_0000-1.png Graphic file (type png)
 <use fig/E7/E7_0000-1.png>
-Package luatex.def Info: fig/E7/E7_0000-1.png  used on input line 261.
+Package luatex.def Info: fig/E7/E7_0000-1.png  used on input line 331.
 (luatex.def)             Requested size: 216.81pt x 113.47836pt.
-<fig/E7/E7_0000-2.png, id=129, 1253.68375pt x 722.7pt>
+<fig/E7/E7_0000-2.png, id=192, 1253.68375pt x 722.7pt>
 File: fig/E7/E7_0000-2.png Graphic file (type png)
 <use fig/E7/E7_0000-2.png>
-Package luatex.def Info: fig/E7/E7_0000-2.png  used on input line 266.
+Package luatex.def Info: fig/E7/E7_0000-2.png  used on input line 336.
 (luatex.def)             Requested size: 216.81pt x 124.97466pt.
-<fig/E7/E7_0000-3.png, id=130, 624.3325pt x 575.14874pt>
+<fig/E7/E7_0000-3.png, id=193, 624.3325pt x 575.14874pt>
 File: fig/E7/E7_0000-3.png Graphic file (type png)
 <use fig/E7/E7_0000-3.png>
-Package luatex.def Info: fig/E7/E7_0000-3.png  used on input line 270.
+Package luatex.def Info: fig/E7/E7_0000-3.png  used on input line 340.
 (luatex.def)             Requested size: 216.81pt x 199.72539pt.
 
 Overfull \vbox (16.38075pt too high) has occurred while \output is active []
 
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 279.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 349.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
 
-[13<./fig/E7/E7_0000.png><./fig/E7/E7_0000-1.png><./fig/E7/E7_0000-2.png><./fig/
+[21<./fig/E7/E7_0000.png><./fig/E7/E7_0000-1.png><./fig/E7/E7_0000-2.png><./fig/
 E7/E7_0000-3.png>]
 File: fig/logo/kit_landscape1.pdf Graphic file (type pdf)
 <use fig/logo/kit_landscape1.pdf>
-Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 292.
+Package luatex.def Info: fig/logo/kit_landscape1.pdf  used on input line 362.
 (luatex.def)             Requested size: 209.42903pt x 21.33955pt.
- [14] Excluding 'comment' comment.
-
+ [22] Excluding 'comment' comment.
+Excluding 'comment' comment. 
 AED: lastpage setting LastPage
 (./presen.aux)
 
@@ -1699,13 +1754,13 @@ Package rerunfilecheck Info: File `presen.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33568 strings out of 477805
+ 33672 strings out of 477805
  125244,1144653 words of node,token memory allocated
- 31260 words of node memory still in use:
-   7 hlist, 1 vlist, 4 rule, 2 glue, 433 kern, 1 glyph, 12239 attribute, 491 glu
-e_spec, 635 attribute_list, 3 write, 172 user_defined nodes
-   avail lists: 1:28,2:15645,3:140,4:220,5:36,6:43,7:902,8:13,9:504,10:17,11:6
- 52788 multiletter control sequences out of 65536+600000
+ 35710 words of node memory still in use:
+   7 hlist, 1 vlist, 4 rule, 2 glue, 433 kern, 1 glyph, 13565 attribute, 757 glu
+e_spec, 713 attribute_list, 3 write, 250 user_defined nodes
+   avail lists: 1:28,2:15667,3:178,4:220,5:36,6:43,7:894,8:17,9:504,10:17,11:6
+ 52810 multiletter control sequences out of 65536+600000
  87 fonts using 128413015 bytes
  111i,14n,121p,1783b,1146s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/fontawesome5/FontAwesome5Fr
@@ -1715,10 +1770,10 @@ sr/share/texlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Bold
 .otf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmssbx10.pfb>
-Output written on presen.pdf (14 pages, 7670510 bytes).
+Output written on presen.pdf (22 pages, 7710997 bytes).
 
-PDF statistics: 177 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 131072)
+PDF statistics: 242 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

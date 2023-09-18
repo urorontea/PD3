@@ -96,6 +96,18 @@
 \end{itemize}
 \newpage
 \end{comment}
+\foilhead {\Large 1. 役割分担}
+\begin{description}
+	\item [田村] UIの作成~\\
+	各プラットフォームで動作できるか検証し，UIを作る．\\
+	現在,webでの実装を試みている．
+	
+	\item [野崎] モデルの作成~\\
+	画像を集めて学習させ，判断するためのモデルを作成している．
+	
+\end{description}
+
+
 
 \foilhead{\Large 1. はじめに--背景と目的-- \\ }
 \begin{itemize}
@@ -107,15 +119,73 @@
 \foilhead{\Large 発表の流れ}\
 \begin{enumerate}[itemsep=0.25\zh]
 	\item \textcolor{gray}{はじめに -- 背景と目的 --}
+	\item 概要(UI)
 	\item システム概要
-	\item 評価
+	\item 評価・考察
 	\item むすび
     %\item \url{http://www.fujitsu.co.jp}
 \end{enumerate}
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead {\Large 2. UIの概要}
+\begin{minipage}[]{0.55\textwidth}\vspace{0pt}
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\linewidth]{fig/tamura/gaiyou}
+	\caption{概要図}
+	\label{fig:gaiyou}
+\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}[]{0.45\textwidth}\vspace{0pt}
+	\begin{enumerate}
+		\item ユーザがブラウザに画像を\\アップロード
+		\item プレビューを画面に追加
+		\item  ユーザが画像を送信する\\ボタンを押す
+		\item サーバに画像をアップロード
+		\item サーバで画像を判断する\\モデルを用いて処理\\
+		結果をブラウザに送信,表示\\
+	\end{enumerate}
+\end{minipage}
+\newpage
+
+\foilhead {\Large 2. 1 UIの概要}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\linewidth]{fig/tamura/gaiyou_point}
+	\caption{今回作成した部分}
+	\label{fig:gaiyoupoint}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 2. システム概要}
+\foilhead {\Large 2.2 UIデモ }
+
+\begin{itemize}
+	\item 送信ボタンはあるが，サーバを用意していない状態で押すとエラーが発生するためダミーのボタンを置いている．
+	\item 遷移後の画面も動的サーバから画像，テキストを貰って表示するコードは準備しているが，サーバを用意していないため静的なサイトで遷移後の動作イメージをしやすくしている．\\
+		\href{run:./fig/tamura/web_demo.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}}\\
+\end{itemize}
+
+
+
+
+\foilhead {\Large 2.3 スマホ使用時のイメージ}
+\begin{itemize}
+	\item 	ファイル選択肢の動作
+	\item スマホでも手軽に画像をアップロードすることができる
+\end{itemize}
+	（注）cssを反映しない簡易表示になっている．\\
+		\href{run:./fig/tamura/Phone_demo.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}}\\
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 2. 4 結び(UI)}
+\begin{itemize}
+	\item 今回はブラウザの部分を作成した．
+	\item 今後はサーバ側の実装をしていくとともに，ブラウザのデザイン面での改良を勧めていく．
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 3. 1 システム概要}
 
 
 \begin{figure}[h]
@@ -137,10 +207,8 @@
 	\item YOLOv8では，物体の識別と分類，セグメンテーションができる．
 	\newpage
 \end{description}
-	
-	
+
 \begin{figure}
-	
 		\begin{center}
 			\includegraphics[width=200mm]{fig/521_0.jpg}
 		\end{center}
@@ -178,7 +246,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 2. 現時点までで行ったこと}
+\foilhead{\Large 3 現時点までで行ったこと}
 \begin{description}
 	\item[画像収集の簡略化] ~\\
 	YoutubeのURLと車両タイプを指定することで，YouTubeの動画から車両が写っている場面を保存する．
@@ -189,7 +257,7 @@
 	\begin{itemize}
 		%\item 電車と新幹線を識別するモデル(YOLOv5)
 		\item ３種類の似ている電車を識別するモデル(YOLOv5)
-		\item 電車や新幹線の各車両を分類するモデル(YOLOv8)
+		\item 新幹線の各車両を分類するモデル(YOLOv8)
 	\end{itemize}
 \end{description}
 \newpage
@@ -206,50 +274,52 @@
 %\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 3.1 評価・考察 --識別モデル--}
+\foilhead{\Large 4.1 評価・考察 --識別モデル--}
 \begin{description}
 	\item [似ている電車の識別] ~\\
-	\item ３種類の似ている電車の識別モデルの作成を行った．\\
-	画像が300枚と4000枚のデータセットを準備した．\\
+	\item 画像が300枚と4000枚のデータセットで，３種類の似ている電車の識別モデルの作成を行った．
 	それぞれ学習した結果を使用してテストデータを識別した．
 	\href{run:./fig/hikaku/hikaku_demo.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}}\\
 	\newpage
 	
 	\item 識別結果からデータセットを増やしていけば，\\似ている電車でも識別することが可能だと考えられる．
 	\item しかし4000枚のデータセットでの学習時間は10時間以上かかっており，\\識別したい電車の種類を増やしていくと学習時間が増えてしまう．
-	\item YOLOv8は処理速度が早く精度が高いという特徴があるので，100種類以上の車両タイプを判断する場合にはYOLOv8を使う必要があると考えられる．
+	\item YOLOv8は処理速度が早く精度が高いという特徴があるので，これ以上の車両タイプを判断する場合にはYOLOv8を使う必要があると考えられる．
 \end{description}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 3. 2 評価・考察 --分類モデル--}
-\begin{minipage}[]{0.45\textwidth}\vspace{0pt}
-	\begin{description}
-		%\item アノテーションをする際に，バウンディングボックスの中身だけにすると不具合がおきたこと\\
-		%ボックスの中身だけで学習させる際に何故かエポック数が１００回になっていた．
-		%うまくいかないと思っていたがシンプルに学習回数が足りなかった？\\
-		%背景画像の有無で物体認識の精度が悪くなったので，データセットの画像には背景画像が必要なのではないのかな
-	
-		%\item 電車と新幹線の識別モデルの作成→電車は百種類近くあるのでうまく行かなかった
-		%\item 似ている電車を識別モデルを作成する際に，データセットの画像を増やすだけではうまくいかなかったこと\\
-		%\home\nozaki\ML\ultralytics\yolov5\runs\trian\exp21\ に２２５系，２２７系，５２１系の３種類の識別モデルのデータセットがある
-		
-	    \item [新幹線の分類]~\\
-		新幹線は形は似ているが\\色が特徴的で分類がしやすいと考えられる．
-		
-	\end{description}
-\end{minipage}
-	\hfill
-\begin{minipage}[]{0.6\textwidth}\vspace{0pt}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.75\linewidth]{fig/confusion_matrix}
-		\caption{学習の評価}
-		\label{fig:confusionmatrix}
-	\end{figure}
-\end{minipage}
+\foilhead{\Large 4. 2 評価・考察 --分類モデル--}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\linewidth]{fig/confusion_matrix}
+	\caption{学習の評価}
+	\label{fig:confusionmatrix}
+\end{figure}
+
 \newpage
 
+\begin{description}
+	%\item アノテーションをする際に，バウンディングボックスの中身だけにすると不具合がおきたこと\\
+	%ボックスの中身だけで学習させる際に何故かエポック数が１００回になっていた．
+	%うまくいかないと思っていたがシンプルに学習回数が足りなかった？\\
+	%背景画像の有無で物体認識の精度が悪くなったので，データセットの画像には背景画像が必要なのではないのかな
+	
+	%\item 電車と新幹線の識別モデルの作成→電車は百種類近くあるのでうまく行かなかった
+	%\item 似ている電車を識別モデルを作成する際に，データセットの画像を増やすだけではうまくいかなかったこと\\
+	%\home\nozaki\ML\ultralytics\yolov5\runs\trian\exp21\ に２２５系，２２７系，５２１系の３種類の識別モデルのデータセットがある
+	
+	\item [新幹線の分類モデルの評価]~\\
+	E7系以外の新幹線はうまく分類できている．\\
+	テストデータの分類結果を確認すると，誤分類していたE7系は光を反射して白くなっている面積が他のE7系の画像よりも大きかった．
+	\item [新幹線の分類モデルの考察]~\\
+	新幹線は形は似ているが\\色が特徴的で分類がしやすいと考えられる．\\
+	光の反射などで車体の色が変わってしまう場合の対策を考える必要がある．\\
+	
+\end{description}
+\newpage
 
 
 \begin{figure}[htbp]
@@ -280,13 +350,13 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 4. むすび}\label{MUSUBI}
+\foilhead{\Large 5. むすび}\label{MUSUBI}
 \begin{itemize}
 	%\item 何のために何を作成したかを改めて書く．
 	%\item 現時点での評価結果，考察を簡潔に書く．
 	%\item 来月の報告までに何をするか計画を書く．
 	\item 電車の車両型式を簡単に知るために分類モデルを作成した．
-	\item 新幹線については，まぁまぁの精度で分類できるようになった．
+	\item 新幹線については，分類できるようになった．
 	\item 今後は，新幹線以外の電車の分類モデルを作成する．
 \end{itemize}
 \newpage
@@ -342,7 +412,7 @@
 \begin{comment}
 	
 
-\begin{thebibliography}{99}
+%\begin{thebibliography}{99}
 \small
 \setlength\itemsep{-0.5\zh}%
 \bibitem{book1} K.Thompson，D.M.Ritchie，\textbf{"The UNIX Time-Sharing System"}，Communications of the ACM, Vol.17, No.7, 1974.
@@ -357,7 +427,19 @@
 \bibitem{book5} Digital Equipment Copporation: \textbf{PDP11 Peripherals HandBook}, 1972.
 %\bibitem{book6} \url{https://github.com/No000/unix-v1-utils}
 %\bibitem{book7} \url{https://github.com/No000/UnixV1-SystemCallTracer}
-\end{thebibliography}
+%\end{thebibliography}
 \end{comment}
 
+\begin{comment}
+\begin{thebiblography}
+\small
+\setlength\itemsep{-0.5\zh}
+\bibitem{book1} ultralytics, 	\textbf{"yolov5"}, 
+\end{thebibliography}
+\end{comment}
 \end{document} 
+
+
+
+
+
